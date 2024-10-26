@@ -1,0 +1,47 @@
+{
+  "name": "@bsara/react-use-fetch",
+  "version": "1.0.0-beta.1",
+  "scripts": {
+  },
+  "files": [
+    "*.js",
+    "*.d.ts",
+    "README.md"
+  ],
+  "type": "module",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    },
+    "./UseFetchMiddlewareProvider": {
+      "types": "./middleware/UseFetchMiddlewareProvider.d.ts",
+      "default": "./middleware/UseFetchMiddlewareProvider.js"
+    },
+    "./middleware/default-options": {
+      "types": "./middleware/default-options-middleware.d.ts",
+      "default": "./middleware/default-options-middleware.js"
+    },
+    "./middleware/simple-cache": {
+      "types": "./middleware/simple-cache-middleware.d.ts",
+      "default": "./middleware/simple-cache-middleware.js"
+    },
+    "./middleware/standard-options": {
+      "types": "./middleware/standard-options-middleware.d.ts",
+      "default": "./middleware/standard-options-middleware.js"
+    }
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "dependencies": {
+    "react-use": "^17.5.1"
+  },
+  "devDependencies": {
+    "react": "^18.3.1",
+    "vite": "^5.4.10"
+  }
+}
