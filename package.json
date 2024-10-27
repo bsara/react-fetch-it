@@ -1,0 +1,16 @@
+{
+    "name": "@bsara/react-use-fetch",
+    "version": "1.0.0-beta.0",
+    "scripts": {
+    },
+    "type": "module",
+    "peerDependencies": {
+        "react": ">=18"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "react": "18.3.1",
+        "vite": "5.4.10"
+    }
+}
