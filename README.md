@@ -89,33 +89,33 @@ TODO
 Hooks
 ----------------------------
 
-- [useFetch](docs/hooks/use-fetch.md)
-- [useFetchFn](docs/hooks/use-fetch-fn.md)
-- [useFetchResp](docs/hooks/use-fetch-resp.md)
-- [useFetchRespFn](docs/hooks/use-fetch-resp-fn.md)
+- [useFetch](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch.md)
+- [useFetchFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-fn.md)
+- [useFetchResp](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-resp.md)
+- [useFetchRespFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-resp-fn.md)
 - DELETE
-  - [useFetchDel](docs/hooks/use-fetch-del.md)
-  - [useFetchDelFn](docs/hooks/use-fetch-del-fn.md)
-  - [useFetchDelResp](docs/hooks/use-fetch-del-resp.md)
-  - [useFetchDelRespFn](docs/hooks/use-fetch-del-resp-fn.md)
+  - [useFetchDel](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-del.md)
+  - [useFetchDelFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-del-fn.md)
+  - [useFetchDelResp](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-del-resp.md)
+  - [useFetchDelRespFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-del-resp-fn.md)
 - GET
-  - [useFetchGet](docs/hooks/use-fetch-get.md)
-  - [useFetchGetFn](docs/hooks/use-fetch-get-fn.md)
-  - [useFetchGetResp](docs/hooks/use-fetch-get-resp.md)
-  - [useFetchGetRespFn](docs/hooks/use-fetch-get-resp-fn.md)
+  - [useFetchGet](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-get.md)
+  - [useFetchGetFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-get-fn.md)
+  - [useFetchGetResp](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-get-resp.md)
+  - [useFetchGetRespFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-get-resp-fn.md)
 - HEAD 
-  - [useFetchHead](docs/hooks/use-fetch-head.md)
-  - [useFetchHeadFn](docs/hooks/use-fetch-head-fn.md)
+  - [useFetchHead](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-head.md)
+  - [useFetchHeadFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-head-fn.md)
 - POST
-  - [useFetchPost](docs/hooks/use-fetch-post.md)
-  - [useFetchPostFn](docs/hooks/use-fetch-post-fn.md)
-  - [useFetchPostResp](docs/hooks/use-fetch-post-resp.md)
-  - [useFetchPostRespFn](docs/hooks/use-fetch-post-resp-fn.md)
+  - [useFetchPost](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-post.md)
+  - [useFetchPostFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-post-fn.md)
+  - [useFetchPostResp](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-post-resp.md)
+  - [useFetchPostRespFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-post-resp-fn.md)
 - PUT
-  - [useFetchPut](docs/hooks/use-fetch-put.md)
-  - [useFetchPutFn](docs/hooks/use-fetch-put-fn.md)
-  - [useFetchPutResp](docs/hooks/use-fetch-put-resp.md)
-  - [useFetchPutRespFn](docs/hooks/use-fetch-put-resp-fn.md)
+  - [useFetchPut](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-put.md)
+  - [useFetchPutFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-put-fn.md)
+  - [useFetchPutResp](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-put-resp.md)
+  - [useFetchPutRespFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-put-resp-fn.md)
 
 
 Middleware
@@ -125,6 +125,6 @@ TODO
 
 ### Provided Middleware
 
-- [defaultOptionsMiddleware](docs/middleware/default-options-middleware.md)
-- [simpleCacheMiddleware](docs/middleware/simple-cache-middleware.md)
-- [standardOptionsMiddleware](docs/middleware/standard-options-middleware.md)
+- [defaultOptionsMiddleware](https://github.com/bsara/react-use-fetch/blob/master/docs/middleware/default-options-middleware.md)
+- [simpleCacheMiddleware](https://github.com/bsara/react-use-fetch/blob/master/docs/middleware/simple-cache-middleware.md)
+- [standardOptionsMiddleware](https://github.com/bsara/react-use-fetch/blob/master/docs/middleware/standard-options-middleware.md)
