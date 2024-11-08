@@ -1,6 +1,9 @@
 react-use-fetch
 =========================================================================================
 
+[![NPM Package](https://img.shields.io/npm/v/valyou.svg?style=flat-square)][npm]
+[![ISC License](https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square)][license]
+
 React hooks for interacting with [the fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 which includes the ability to add middleware to intercept, modify, cancel, cache, or
 analyze fetch calls.
@@ -128,3 +131,29 @@ TODO
 - [defaultOptionsMiddleware](https://github.com/bsara/react-use-fetch/blob/master/docs/middleware/default-options-middleware.md)
 - [simpleCacheMiddleware](https://github.com/bsara/react-use-fetch/blob/master/docs/middleware/simple-cache-middleware.md)
 - [standardOptionsMiddleware](https://github.com/bsara/react-use-fetch/blob/master/docs/middleware/standard-options-middleware.md)
+
+
+License
+----------------------------
+
+ISC License (ISC)
+
+Copyright (c) 2024, Brandon D. Sara (https://bsara.dev/)
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+
+
+
+
+[license]: https://github.com/bsara/react-use-fetch/blob/master/LICENSE "License"
+[npm]:     https://www.npmjs.com/package/@bsara/react-use-fetch         "NPM Package: @bsara/react-use-fetch"
