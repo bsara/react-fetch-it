@@ -1,7 +1,7 @@
 react-use-fetch
 =========================================================================================
 
-[![NPM Package](https://img.shields.io/npm/v/valyou.svg?style=flat-square)][npm]
+[![NPM Package](https://img.shields.io/npm/v/@bsara/react-use-fetch.svg?style=flat-square)][npm]
 [![ISC License](https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square)][license]
 
 React hooks for interacting with [the fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
