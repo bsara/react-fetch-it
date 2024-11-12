@@ -293,6 +293,35 @@ export function useFetchRespFn(url, options) {
 // endregion
 
 
+// region Fetch Wrappers
+
+export function fetchGet(url, options) {
+  return _execFetch({ method: 'GET', url, ...(options ?? {}) });
+}
+
+export function fetchPost(url, options) {
+  return _execFetch({ method: 'POST', url, ...(options ?? {}) });
+}
+
+export function fetchPut(url, options) {
+  return _execFetch({ method: 'PUT', url, ...(options ?? {}) });
+}
+
+export function fetchDel(url, options) {
+  return _execFetch({ method: 'DELETE', url, ...(options ?? {}) });
+}
+
+export function fetchHead(url, options) {
+  return _execFetch({ method: 'HEAD', url, ...(options ?? {}) });
+}
+
+export function doFetch(url, options) {
+  return _execFetch({ method: (options?.method ?? 'GET'), url, ...(options ?? {}) });
+}
+
+// endregion
+
+
 // region Private Hooks
 
 function _useImmediateFetch({

@@ -76,6 +76,43 @@ export function useFetchHead(url: URLish, options?: UseFetchOptions, customAbort
  */
 export function useFetchHeadFn(url: URLish, options?: UseFetchOptions): UseFetchStateFn<Response>;
 
+
+/**
+ * Submits a GET request that will utilize the middleware and other options provided by
+ * `@bsara/react-use-fetch`.
+ */
+export function fetchGet<T>(url: URLish, options?: UseFetchOptions<T>): Promise<T>;
+
+/**
+ * Submits a POST request that will utilize the middleware and other options provided by
+ * `@bsara/react-use-fetch`.
+ */
+export function fetchPost<T>(url: URLish, options?: UseFetchOptions<T>): Promise<T>;
+
+/**
+ * Submits a PUT request that will utilize the middleware and other options provided by
+ * `@bsara/react-use-fetch`.
+ */
+export function fetchPut<T>(url: URLish, options?: UseFetchOptions<T>): Promise<T>;
+
+/**
+ * Submits a DELETE request that will utilize the middleware and other options provided by
+ * `@bsara/react-use-fetch`.
+ */
+export function fetchDel<T>(url: URLish, options?: UseFetchOptions<T>): Promise<T>;
+
+/**
+ * Submits a HEAD request that will utilize the middleware and other options provided by
+ * `@bsara/react-use-fetch`.
+ */
+export function fetchHead<T>(url: URLish, options?: UseFetchOptions<T>): Promise<T>;
+
+/**
+ * Submits an HTTP request that will utilize the middleware and other options provided by
+ * `@bsara/react-use-fetch`.
+ */
+export function doFetch<T extends UseFetchMiddlewareCustomOptions = UseFetchMiddlewareCustomOptions, TResp = object>(url: URLish, options?: UseFetchFullOptions<T, TResp>): Promise<TResp>;
+
 // endregion
 
 

@@ -133,6 +133,21 @@ TODO
 - [standardOptionsMiddleware](https://github.com/bsara/react-use-fetch/blob/master/docs/middleware/standard-options-middleware.md)
 
 
+Fetch Wrappers
+----------------------------
+
+> These are provided in case you need to make a request but do not wish to use a hook to
+> do so. This allows all middleware and other options to still be used even when not
+> using a hook.
+
+- [doFetch](https://github.com/bsara/react-use-fetch/blob/master/docs/fetch-wrappers/do-fetch.md)
+- [fetchDel](https://github.com/bsara/react-use-fetch/blob/master/docs/fetch-wrappers/fetch-del.md)
+- [fetchGet](https://github.com/bsara/react-use-fetch/blob/master/docs/fetch-wrappers/fetch-get.md)
+- [fetchHead](https://github.com/bsara/react-use-fetch/blob/master/docs/fetch-wrappers/fetch-head.md)
+- [fetchPost](https://github.com/bsara/react-use-fetch/blob/master/docs/fetch-wrappers/fetch-post.md)
+- [fetchPut](https://github.com/bsara/react-use-fetch/blob/master/docs/fetch-wrappers/fetch-put.md)
+
+
 License
 ----------------------------
 
