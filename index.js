@@ -391,7 +391,7 @@ function _useFetch({
 // region Private Helpers
 
 function _execFetch({ method, url: origUrl, options: origReqOptions, extraMiddlewares }) {
-  let reqOptions = { ...origReqOptions, url: origUrl };
+  let reqOptions = { ...origReqOptions, url: origUrl.toString() };
 
   for (const middleware of [ ..._middlewares, ...(typeof extraMiddlewares === 'function' ? [ extraMiddlewares ] : (extraMiddlewares ?? [])) ]) {
     reqOptions = middleware({ ...structuredClone(reqOptions) });

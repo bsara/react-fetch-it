@@ -160,7 +160,9 @@ export type UseFetchStateWithBodyFn<TBody, T> = {
 // endregion
 
 
-export type UseFetchMiddleware<T extends UseFetchFullOptions = UseFetchFullOptions> = (options: T) => T | Response | false;
+export type UseFetchMiddleware<T extends UseFetchMiddlewareOptions = UseFetchMiddlewareOptions> = (options: T) => T | Response | false;
+
+export type UseFetchMiddlewareOptions<T extends UseFetchMiddlewareCustomOptions = UseFetchMiddlewareCustomOptions, TResp = object> = UseFetchFullOptions<T, TResp> & { url: string };
 
 
 
