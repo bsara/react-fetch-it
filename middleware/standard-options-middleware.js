@@ -30,4 +30,7 @@ export default function standardOptionsMiddleware(reqOptions) {
       && (typeof updatedReqOptions.body !== 'string')) {
     updatedReqOptions.body = JSON.stringify(updatedReqOptions.body);
   }
+
+
+  return updatedReqOptions;
 }
