@@ -426,13 +426,12 @@ function _execFetch({ method, url: origUrl, options: origReqOptions, extraMiddle
 
   const { onResponse, responseType, url, ...options } = reqOptions;
 
-  const promise = fetch(url, { ...options, method })
-    .then((resp) => {
-      if (resp.status >= 400) {
-        throw resp;
-      }
+  const promise = fetch(url, { ...options, method }).then((resp) => {
+    if (resp.ok) {
       return resp;
-    });
+    }
+    throw resp;
+  });
 
   return (
     (responseType === 'arrayBuffer') ? promise.then((resp) => resp.arrayBuffer())
