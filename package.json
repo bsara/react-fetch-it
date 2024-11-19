@@ -1,6 +1,6 @@
 {
   "name": "@bsara/react-use-fetch",
-  "version": "1.0.0-beta.9",
+  "version": "1.0.0-beta.10",
   "description": "React hooks for interacting with the fetch API which includes the ability to add middleware to intercept, modify, cancel, cache, or analyze fetch calls.",
   "authors": [
     "Brandon Sara (https://bsara.dev)"

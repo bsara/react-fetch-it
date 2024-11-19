@@ -35,248 +35,260 @@ export function removeUseFetchMiddleware(middleware) {
 // region Hooks
 
 export function useFetchGet(url, optionsOrCustomAbortController, customAbortController) {
-  const [ finalOptions, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
+  const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
 
-  return useFetch({
-    url,
+  return _useImmediateFetch({
+    abortController: finalCustomAbortController,
     options: {
-      ...finalOptions,
+      ...options,
       method: 'GET'
     },
-    abortController: finalCustomAbortController
+    url
   });
 }
 
 export function useFetchGetFn(url, options) {
-  return useFetchFn({
-    url,
+  return _useFetch({
     options: {
       ...(options ?? {}),
       method: 'GET'
-    }
+    },
+    url
   });
 }
 
 export function useFetchGetResp(url, optionsOrCustomAbortController, customAbortController) {
-  const [ finalOptions, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
+  const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
 
-  return useFetchResp({
-    url,
+  return _useImmediateFetch({
+    abortController: finalCustomAbortController,
     options: {
-      ...finalOptions,
-      method: 'GET'
+      ...options,
+      method: 'GET',
+      responseType: 'none'
     },
-    abortController: finalCustomAbortController
+    url
   });
 }
 
 export function useFetchGetRespFn(url, options) {
-  return useFetchRespFn({
-    url,
+  return _useFetch({
     options: {
       ...(options ?? {}),
-      method: 'GET'
-    }
+      method: 'GET',
+      responseType: 'none'
+    },
+    url
   });
 }
 
 
 export function useFetchPost(url, body, optionsOrCustomAbortController, customAbortController) {
-  const [ finalOptions, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
+  const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
 
-  return useFetch({
-    url,
+  return _useImmediateFetch({
+    abortController: finalCustomAbortController,
     options: {
-      ...finalOptions,
+      ...options,
       body,
       method: 'POST'
     },
-    abortController: finalCustomAbortController
+    url
   });
 }
 
 export function useFetchPostFn(url, options) {
-  return useFetchFn({
-    url,
+  return _useFetch({
+    callbackProvidesBody: true,
     options: {
       ...(options ?? {}),
       method: 'POST'
     },
-    callbackProvidesBody: true
+    url
   });
 }
 
 export function useFetchPostResp(url, body, optionsOrCustomAbortController, customAbortController) {
-  const [ finalOptions, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
+  const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
 
-  return useFetchResp({
-    url,
+  return _useImmediateFetch({
+    abortController: finalCustomAbortController,
     options: {
-      ...finalOptions,
+      ...options,
       body,
-      method: 'POST'
+      method: 'POST',
+      responseType: 'none'
     },
-    abortController: finalCustomAbortController
+    url
   });
 }
 
 export function useFetchPostRespFn(url, options) {
-  return useFetchRespFn({
-    url,
+  return _useFetch({
+    callbackProvidesBody: true,
     options: {
-      ...finalOptions,
-      method: 'POST'
+      ...(options ?? {}),
+      method: 'POST',
+      responseType: 'none'
     },
-    callbackProvidesBody: true
+    url
   });
 }
 
 
 export function useFetchPut(url, body, optionsOrCustomAbortController, customAbortController) {
-  const [ finalOptions, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
+  const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
 
-  return useFetch({
-    url,
+  return _useImmediateFetch({
+    abortController: finalCustomAbortController,
     options: {
-      ...finalOptions,
+      ...options,
       body,
       method: 'PUT'
     },
-    abortController: finalCustomAbortController
+    url
   });
 }
 
 export function useFetchPutFn(url, options) {
-  return useFetchFn({
-    url,
+  return _useFetch({
+    callbackProvidesBody: true,
     options: {
       ...(options ?? {}),
       method: 'PUT'
     },
-    callbackProvidesBody: true
+    url
   });
 }
 
 export function useFetchPutResp(url, body, optionsOrCustomAbortController, customAbortController) {
-  const [ finalOptions, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
+  const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
 
-  return useFetchResp({
-    url,
+  return _useImmediateFetch({
+    abortController: finalCustomAbortController,
     options: {
-      ...finalOptions,
+      ...options,
       body,
-      method: 'PUT'
+      method: 'PUT',
+      responseType: 'none'
     },
-    abortController: finalCustomAbortController
+    url
   });
 }
 
 export function useFetchPutRespFn(url, options) {
-  return useFetchRespFn({
-    url,
+  return _useFetch({
+    callbackProvidesBody: true,
     options: {
       ...(options ?? {}),
-      method: 'PUT'
+      method: 'PUT',
+      responseType: 'none'
     },
-    callbackProvidesBody: true
+    url
   });
 }
 
 
 export function useFetchDelete(url, optionsOrCustomAbortController, customAbortController) {
-  const [ finalOptions, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
+  const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
 
-  return useFetch({
-    url,
+  return _useImmediateFetch({
+    abortController: finalCustomAbortController,
     options: {
-      ...finalOptions,
+      ...options,
       method: 'DELETE'
     },
-    abortController: finalCustomAbortController
+    url
   });
 }
 
 export function useFetchDeleteFn(url, options) {
-  return useFetchFn({
-    url,
+  return _useFetch({
     options: {
       ...(options ?? {}),
       method: 'DELETE'
-    }
+    },
+    url
   });
 }
 
 export function useFetchDeleteResp(url, optionsOrCustomAbortController, customAbortController) {
-  const [ finalOptions, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
+  const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
 
-  return useFetchResp({
-    url,
+  return _useImmediateFetch({
+    abortController: finalCustomAbortController,
     options: {
-      ...finalOptions,
-      method: 'DELETE'
+      ...options,
+      method: 'DELETE',
+      responseType: 'none'
     },
-    abortController: finalCustomAbortController
+    url
   });
 }
 
 export function useFetchDeleteRespFn(url, options) {
-  return useFetchRespFn({
-    url,
+  return _useFetch({
     options: {
       ...(options ?? {}),
-      method: 'DELETE'
-    }
+      method: 'DELETE',
+      responseType: 'none'
+    },
+    url
   });
 }
 
-export function useFetchHead(url, optionsOrCustomAbortController, customAbortController) {
-  const [ finalOptions, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
 
-  return useFetchResp({
-    url,
+export function useFetchHead(url, optionsOrCustomAbortController, customAbortController) {
+  const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
+
+  return _useImmediateFetch({
+    abortController: finalCustomAbortController,
     options: {
-      ...finalOptions,
-      method: 'HEAD'
+      ...options,
+      method: 'HEAD',
+      responseType: 'none'
     },
-    abortController: finalCustomAbortController
+    url
   });
 }
 
 export function useFetchHeadFn(url, options) {
-  return useFetchRespFn({
+  return _useFetch({
     url,
     options: {
       ...(options ?? {}),
-      method: 'HEAD'
+      method: 'HEAD',
+      responseType: 'none'
     }
   });
 }
 
 
 export function useFetch(url, optionsOrCustomAbortController, customAbortController) {
-  const [ finalOptions, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
+  const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
 
   return _useImmediateFetch({
     abortController: finalCustomAbortController,
-    options: finalOptions,
+    options,
     url
   });
 }
-
 
 export function useFetchResp(url, optionsOrCustomAbortController, customAbortController) {
-  const [ finalOptions, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
+  const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
 
   return _useImmediateFetch({
     abortController: finalCustomAbortController,
-    options: { ...finalOptions, responseType: 'none' },
+    options: {
+      ...options,
+      responseType: 'none'
+    },
     url
   });
 }
 
-
 export function useFetchFn(url, options) {
-  return _useImmediateFetch({
+  return _useFetch({
     options: (options ?? {}),
     url
   });
@@ -285,7 +297,10 @@ export function useFetchFn(url, options) {
 
 export function useFetchRespFn(url, options) {
   return _useFetch({
-    options: { ...(options ?? {}), responseType: 'none' },
+    options: {
+      ...(options ?? {}),
+      responseType: 'none'
+    },
     url
   });
 }
@@ -411,7 +426,13 @@ function _execFetch({ method, url: origUrl, options: origReqOptions, extraMiddle
 
   const { onResponse, responseType, url, ...options } = reqOptions;
 
-  const promise = fetch(url, { ...options, method });
+  const promise = fetch(url, { ...options, method })
+    .then((resp) => {
+      if (resp.status >= 400) {
+        throw resp;
+      }
+      return resp;
+    });
 
   return (
     (responseType === 'arrayBuffer') ? promise.then((resp) => resp.arrayBuffer())
