@@ -68,13 +68,13 @@ export function useFetchDelRespFn(url: URLish, options?: UseFetchOptions): UseFe
  * Submits an immediately invoked HEAD request if the provided URL has not changed.
  * The resulting value will be a `Response`.
  */
-export function useFetchHead(url: URLish, options?: UseFetchOptions, customAbortController?: AbortController): UseFetchState<Response>;
+export function useFetchHead(url: URLish, options?: Omit<UseFetchOptions, 'responseType'>, customAbortController?: AbortController): UseFetchState<Response>;
 
 /**
  * Creates a HEAD fetch invocation function and state of said invocation.
  * The resulting value will be a `Response`.
  */
-export function useFetchHeadFn(url: URLish, options?: UseFetchOptions): UseFetchStateFn<Response>;
+export function useFetchHeadFn(url: URLish, options?: Omit<UseFetchOptions, 'responseType'>): UseFetchStateFn<Response>;
 
 
 /**
@@ -105,7 +105,7 @@ export function fetchDel<T>(url: URLish, options?: UseFetchOptions<T>): Promise<
  * Submits a HEAD request that will utilize the middleware and other options provided by
  * `@bsara/react-use-fetch`.
  */
-export function fetchHead<T>(url: URLish, options?: UseFetchOptions<T>): Promise<T>;
+export function fetchHead<T>(url: URLish, options?: Omit<UseFetchOptions<T>, 'responseType'>): Promise<T>;
 
 /**
  * Submits an HTTP request that will utilize the middleware and other options provided by

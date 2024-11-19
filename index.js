@@ -296,27 +296,27 @@ export function useFetchRespFn(url, options) {
 // region Fetch Wrappers
 
 export function fetchGet(url, options) {
-  return _execFetch({ method: 'GET', url, ...(options ?? {}) });
+  return _execFetch({ method: 'GET', url, options: (options ?? {}) });
 }
 
 export function fetchPost(url, options) {
-  return _execFetch({ method: 'POST', url, ...(options ?? {}) });
+  return _execFetch({ method: 'POST', url, options: (options ?? {}) });
 }
 
 export function fetchPut(url, options) {
-  return _execFetch({ method: 'PUT', url, ...(options ?? {}) });
+  return _execFetch({ method: 'PUT', url, options: (options ?? {}) });
 }
 
 export function fetchDel(url, options) {
-  return _execFetch({ method: 'DELETE', url, ...(options ?? {}) });
+  return _execFetch({ method: 'DELETE', url, options: (options ?? {}) });
 }
 
 export function fetchHead(url, options) {
-  return _execFetch({ method: 'HEAD', url, ...(options ?? {}) });
+  return _execFetch({method: 'HEAD', url, options: { ...(options ?? {}), responseType: 'none' } });
 }
 
 export function doFetch(url, options) {
-  return _execFetch({ method: (options?.method ?? 'GET'), url, ...(options ?? {}) });
+  return _execFetch({ method: (options?.method ?? 'GET'), url, options: (options ?? {}) });
 }
 
 // endregion
