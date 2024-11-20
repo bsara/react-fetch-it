@@ -1,4 +1,4 @@
-import { UseFetchMiddleware, UseFetchOptions } from "../index";
+import { FetchItMiddleware, FetchItOptions } from "../index";
 
 
 
@@ -10,13 +10,13 @@ import { UseFetchMiddleware, UseFetchOptions } from "../index";
  * // You can set globally if you DO NOT expect changes in options at runtime.
  * // You would typically have this code execute via (or in) your main entry file.
  *
- * import { addUseFetchMiddleware, UseFetchOptions } from "react-use-fetch";
- * import defaultOptionsMiddleware from "react-use-fetch/middleware/default-options";
+ * import { addFetchItMiddleware, FetchItOptions } from "react-fetch-it";
+ * import defaultOptionsMiddleware from "react-fetch-it/middleware/default-options";
  *
- * addUseFetchMiddleware(
+ * addFetchItMiddleware(
  *   defaultOptionsMiddleware({
  *     // ...
- *   } as Partial<UseFetchOptions>),
+ *   } as Partial<FetchItOptions>),
  *
  *   // other middlewares...
  * );
@@ -26,26 +26,26 @@ import { UseFetchMiddleware, UseFetchOptions } from "../index";
  * @example ```tsx
  * // You can use a provider if you expect changes in options at runtime.
  *
- * import UseFetchMiddlewareProvider from 'react-use-fetch/UseFetchMiddlewareProvider';
- * import defaultOptionsMiddleware from "react-use-fetch/middleware/default-options";
- * import type { UseFetchOptions } from "react-use-fetch";
+ * import FetchItMiddlewareProvider from 'react-fetch-it/MiddlewareProvider';
+ * import defaultOptionsMiddleware from "react-fetch-it/middleware/default-options";
+ * import type { FetchItOptions } from "react-fetch-it";
  *
  * export function MyComponent({ children, ...props }) {
  *   // ...
  *
- *   const defaultOptions: Partial<UseFetchOptions> = {
+ *   const defaultOptions: Partial<FetchItOptions> = {
  *     // ...
  *   };
  *
  *   return (
- *     <UseFetchMiddlewareProvider middleware={defaultOptionsMiddleware(defaultOptions)}>
+ *     <FetchItMiddlewareProvider middleware={defaultOptionsMiddleware(defaultOptions)}>
  *       {children}
- *     </UseFetchMiddlewareProvider>
+ *     </FetchItMiddlewareProvider>
  *   );
  * }
  * ```
  */
-export function defaultOptionsMiddleware(defaultOptions: Partial<UseFetchOptions>): UseFetchMiddleware;
+export function defaultOptionsMiddleware(defaultOptions: Partial<FetchItOptions>): FetchItMiddleware;
 
 
-export type UseFetchDefaultOptionsMiddlewareOptions = Partial<UseFetchOptions>;
+export type FetchItDefaultOptionsMiddlewareOptions = Partial<FetchItOptions>;

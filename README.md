@@ -1,19 +1,19 @@
-react-use-fetch
+react-fetch-it
 =========================================================================================
 
-[![NPM Package](https://img.shields.io/npm/v/@bsara/react-use-fetch.svg?style=flat-square)][npm]
+[![NPM Package](https://img.shields.io/npm/v/react-fetch-it.svg?style=flat-square)][npm]
 [![ISC License](https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square)][license]
 
-React hooks for interacting with [the fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-which includes the ability to add middleware to intercept, modify, cancel, cache, or
-analyze fetch calls.
+React hooks for interacting with [the fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
+Includes the ability to add middleware to intercept, modify, cancel, cache, or analyze
+fetch calls.
 
 
 Installation
 ----------------------------
 
 ```shell
-$ npm i -S @bsara/react-use-fetch
+$ npm i -S react-fetch-it
 ```
 
 
@@ -23,7 +23,7 @@ Basic Usage
 ### Basic Usage (Immediate Execution)
 
 ```tsx
-import { useFetchGet } from '@bsara/react-use-fetch';
+import { useFetchGet } from 'react-fetch-it';
 
 export function MyComponent() {
   const { loading, error, value: movie } = useFetchGet<Movie>('/api/movies/42'); // NOTE: Only submits request if URL changes.
@@ -47,7 +47,7 @@ type Movie = {
 
 ```tsx
 import { useState } from 'react';
-import { useFetchGetFn } from '@bsara/react-use-fetch';
+import { useFetchGetFn } from 'react-fetch-it';
 
 export function MyComponent() {
   const [ { loading, error, value: movie }, fetchMovie ] = useFetchGetFn<Movie>(`/api/movies/42`);
@@ -56,7 +56,7 @@ export function MyComponent() {
     loading ? <div>Loading...</div>
       : error ? <div>Error: {error.message}</div>
       : movie ? <div>{movie.title} ({movie.year}) by {movie.director}</div>
-      : <button onClick={fetchMovie}>Fetch It!</button>
+      : <button onClick={fetchMovie}>Fetch it, yo!</button>
   );
 }
 ```
@@ -66,10 +66,12 @@ export function MyComponent() {
 ```ts
 // main.ts
 
-import { addUseFetchMiddleware } from '@bsara/react-use-fetch';
-import standardOptionsMiddleware from '@bsara/react-use-fetch/middleware/standard-options';
+import { addFetchItMiddleware } from 'react-fetch-it';
+import standardOptionsMiddleware from 'react-fetch-it/middleware/standard-options';
 
-addUseFetchMiddleware(standardOptionsMiddleware);
+addFetchItMiddleware(
+ standardOptionsMiddleware
+);
 
 // ...
 ```
@@ -92,33 +94,33 @@ TODO
 Hooks
 ----------------------------
 
-- [useFetch](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch.md)
-- [useFetchFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-fn.md)
-- [useFetchResp](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-resp.md)
-- [useFetchRespFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-resp-fn.md)
+- [useFetch](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch.md)
+- [useFetchFn](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-fn.md)
+- [useFetchResp](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-resp.md)
+- [useFetchRespFn](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-resp-fn.md)
 - DELETE
-  - [useFetchDel](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-del.md)
-  - [useFetchDelFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-del-fn.md)
-  - [useFetchDelResp](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-del-resp.md)
-  - [useFetchDelRespFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-del-resp-fn.md)
+  - [useFetchDel](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-del.md)
+  - [useFetchDelFn](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-del-fn.md)
+  - [useFetchDelResp](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-del-resp.md)
+  - [useFetchDelRespFn](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-del-resp-fn.md)
 - GET
-  - [useFetchGet](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-get.md)
-  - [useFetchGetFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-get-fn.md)
-  - [useFetchGetResp](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-get-resp.md)
-  - [useFetchGetRespFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-get-resp-fn.md)
+  - [useFetchGet](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-get.md)
+  - [useFetchGetFn](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-get-fn.md)
+  - [useFetchGetResp](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-get-resp.md)
+  - [useFetchGetRespFn](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-get-resp-fn.md)
 - HEAD 
-  - [useFetchHead](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-head.md)
-  - [useFetchHeadFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-head-fn.md)
+  - [useFetchHead](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-head.md)
+  - [useFetchHeadFn](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-head-fn.md)
 - POST
-  - [useFetchPost](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-post.md)
-  - [useFetchPostFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-post-fn.md)
-  - [useFetchPostResp](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-post-resp.md)
-  - [useFetchPostRespFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-post-resp-fn.md)
+  - [useFetchPost](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-post.md)
+  - [useFetchPostFn](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-post-fn.md)
+  - [useFetchPostResp](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-post-resp.md)
+  - [useFetchPostRespFn](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-post-resp-fn.md)
 - PUT
-  - [useFetchPut](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-put.md)
-  - [useFetchPutFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-put-fn.md)
-  - [useFetchPutResp](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-put-resp.md)
-  - [useFetchPutRespFn](https://github.com/bsara/react-use-fetch/blob/master/docs/hooks/use-fetch-put-resp-fn.md)
+  - [useFetchPut](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-put.md)
+  - [useFetchPutFn](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-put-fn.md)
+  - [useFetchPutResp](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-put-resp.md)
+  - [useFetchPutRespFn](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-put-resp-fn.md)
 
 
 Middleware
@@ -128,9 +130,9 @@ TODO
 
 ### Provided Middleware
 
-- [defaultOptionsMiddleware](https://github.com/bsara/react-use-fetch/blob/master/docs/middleware/default-options-middleware.md)
-- [simpleCacheMiddleware](https://github.com/bsara/react-use-fetch/blob/master/docs/middleware/simple-cache-middleware.md)
-- [standardOptionsMiddleware](https://github.com/bsara/react-use-fetch/blob/master/docs/middleware/standard-options-middleware.md)
+- [defaultOptionsMiddleware](https://github.com/bsara/react-fetch-it/blob/master/docs/middleware/default-options-middleware.md)
+- [simpleCacheMiddleware](https://github.com/bsara/react-fetch-it/blob/master/docs/middleware/simple-cache-middleware.md)
+- [standardOptionsMiddleware](https://github.com/bsara/react-fetch-it/blob/master/docs/middleware/standard-options-middleware.md)
 
 
 Fetch Wrappers
@@ -140,12 +142,12 @@ Fetch Wrappers
 > do so. This allows all middleware and other options to still be used even when not
 > using a hook.
 
-- [doFetch](https://github.com/bsara/react-use-fetch/blob/master/docs/fetch-wrappers/do-fetch.md)
-- [fetchDel](https://github.com/bsara/react-use-fetch/blob/master/docs/fetch-wrappers/fetch-del.md)
-- [fetchGet](https://github.com/bsara/react-use-fetch/blob/master/docs/fetch-wrappers/fetch-get.md)
-- [fetchHead](https://github.com/bsara/react-use-fetch/blob/master/docs/fetch-wrappers/fetch-head.md)
-- [fetchPost](https://github.com/bsara/react-use-fetch/blob/master/docs/fetch-wrappers/fetch-post.md)
-- [fetchPut](https://github.com/bsara/react-use-fetch/blob/master/docs/fetch-wrappers/fetch-put.md)
+- [doFetch](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/do-fetch.md)
+- [fetchDel](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-del.md)
+- [fetchGet](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-get.md)
+- [fetchHead](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-head.md)
+- [fetchPost](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-post.md)
+- [fetchPut](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-put.md)
 
 
 License
@@ -170,5 +172,5 @@ PERFORMANCE OF THIS SOFTWARE.
 
 
 
-[license]: https://github.com/bsara/react-use-fetch/blob/master/LICENSE "License"
-[npm]:     https://www.npmjs.com/package/@bsara/react-use-fetch         "NPM Package: @bsara/react-use-fetch"
+[license]: https://github.com/bsara/react-fetch-it/blob/master/LICENSE "License"
+[npm]:     https://www.npmjs.com/package/react-fetch-it                "NPM Package: react-fetch-it"

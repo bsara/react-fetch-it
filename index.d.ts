@@ -3,115 +3,115 @@
 /**
  * TODO
  */
-export function addUseFetchMiddleware(...middlewares: UseFetchMiddleware[]): void;
+export function addFetchItMiddleware(...middlewares: FetchItMiddleware[]): void;
 
 
 /**
  * TODO
  */
-export function removeUseFetchMiddleware(middleware: UseFetchMiddleware): void;
+export function removeFetchItMiddleware(middleware: FetchItMiddleware): void;
 
 
 
-export function useFetch<T = any>(url: URLish, options?: UseFetchFullOptions<UseFetchMiddlewareCustomOptions, T>, customAbortController?: AbortController): UseFetchState<T>;
-export function useFetch<T = any>(url: URLish, customAbortController: AbortController): UseFetchState<T>;
-export function useFetchResp(url: URLish, options?: Omit<UseFetchOptions, 'responseType'>, customAbortController?: AbortController): UseFetchState<Response>;
-export function useFetchResp(url: URLish, customAbortController: AbortController): UseFetchState<Response>;
-export function useFetchFn<T = any>(url: URLish, options?: UseFetchFullOptions<UseFetchMiddlewareCustomOptions, T>): UseFetchStateFn<T>;
-export function useFetchRespFn(url: URLish, options?: Omit<UseFetchOptions, 'responseType'>): UseFetchStateFn<Response>;
+export function useFetch<T = any>(url: URLish, options?: FetchItFullOptions<FetchItMiddlewareCustomOptions, T>, customAbortController?: AbortController): FetchItState<T>;
+export function useFetch<T = any>(url: URLish, customAbortController: AbortController): FetchItState<T>;
+export function useFetchResp(url: URLish, options?: Omit<FetchItOptions, 'responseType'>, customAbortController?: AbortController): FetchItState<Response>;
+export function useFetchResp(url: URLish, customAbortController: AbortController): FetchItState<Response>;
+export function useFetchFn<T = any>(url: URLish, options?: FetchItFullOptions<FetchItMiddlewareCustomOptions, T>): FetchItStateFn<T>;
+export function useFetchRespFn(url: URLish, options?: Omit<FetchItOptions, 'responseType'>): FetchItStateFn<Response>;
 
 
-export function useFetchGet<T = any>(url: URLish, options?: UseFetchOptions<T>, customAbortController?: AbortController): UseFetchState<T>;
-export function useFetchGet<T = any>(url: URLish, customAbortController: AbortController): UseFetchState<T>;
-export function useFetchGetResp(url: URLish, options?: Omit<UseFetchOptions, 'responseType'>, customAbortController?: AbortController): UseFetchState<Response>;
-export function useFetchGetResp(url: URLish, customAbortController: AbortController): UseFetchState<Response>;
-export function useFetchGetFn<T = any>(url: URLish, options?: UseFetchOptions<T>): UseFetchStateFn<T>;
-export function useFetchGetRespFn(url: URLish, options?: Omit<UseFetchOptions, 'responseType'>): UseFetchStateFn<Response>;
+export function useFetchGet<T = any>(url: URLish, options?: FetchItOptions<T>, customAbortController?: AbortController): FetchItState<T>;
+export function useFetchGet<T = any>(url: URLish, customAbortController: AbortController): FetchItState<T>;
+export function useFetchGetResp(url: URLish, options?: Omit<FetchItOptions, 'responseType'>, customAbortController?: AbortController): FetchItState<Response>;
+export function useFetchGetResp(url: URLish, customAbortController: AbortController): FetchItState<Response>;
+export function useFetchGetFn<T = any>(url: URLish, options?: FetchItOptions<T>): FetchItStateFn<T>;
+export function useFetchGetRespFn(url: URLish, options?: Omit<FetchItOptions, 'responseType'>): FetchItStateFn<Response>;
 
 
-export function useFetchPost<T = any>(url: URLish, body?: any, options?: UseFetchOptions<T>, customAbortController?: AbortController): UseFetchState<T>;
-export function useFetchPostResp(url: URLish, body?: any, options?: Omit<UseFetchOptions, 'responseType'>, customAbortController?: AbortController): UseFetchState<Response>;
-export function useFetchPostFn<TBody = any, T = any>(url: URLish, options?: UseFetchOptions<T>): UseFetchStateWithBodyFn<TBody, T>;
-export function useFetchPostRespFn<TBody = any>(url: URLish, options?: Omit<UseFetchOptions, 'responseType'>): UseFetchStateWithBodyFn<TBody, Response>;
+export function useFetchPost<T = any>(url: URLish, body?: any, options?: FetchItOptions<T>, customAbortController?: AbortController): FetchItState<T>;
+export function useFetchPostResp(url: URLish, body?: any, options?: Omit<FetchItOptions, 'responseType'>, customAbortController?: AbortController): FetchItState<Response>;
+export function useFetchPostFn<TBody = any, T = any>(url: URLish, options?: FetchItOptions<T>): FetchItStateWithBodyFn<TBody, T>;
+export function useFetchPostRespFn<TBody = any>(url: URLish, options?: Omit<FetchItOptions, 'responseType'>): FetchItStateWithBodyFn<TBody, Response>;
 
 
-export function useFetchPut<T = any>(url: URLish, body?: any, options?: UseFetchOptions<T>, customAbortController?: AbortController): UseFetchState<T>;
-export function useFetchPutResp(url: URLish, body?: any, options?: Omit<UseFetchOptions, 'responseType'>, customAbortController?: AbortController): UseFetchState<Response>;
-export function useFetchPutFn<TBody = any, T = any>(url: URLish, options?: UseFetchOptions<T>): UseFetchStateWithBodyFn<TBody, T>;
-export function useFetchPutRespFn<TBody = any>(url: URLish, options?: Omit<UseFetchOptions, 'responseType'>): UseFetchStateWithBodyFn<TBody, Response>;
+export function useFetchPut<T = any>(url: URLish, body?: any, options?: FetchItOptions<T>, customAbortController?: AbortController): FetchItState<T>;
+export function useFetchPutResp(url: URLish, body?: any, options?: Omit<FetchItOptions, 'responseType'>, customAbortController?: AbortController): FetchItState<Response>;
+export function useFetchPutFn<TBody = any, T = any>(url: URLish, options?: FetchItOptions<T>): FetchItStateWithBodyFn<TBody, T>;
+export function useFetchPutRespFn<TBody = any>(url: URLish, options?: Omit<FetchItOptions, 'responseType'>): FetchItStateWithBodyFn<TBody, Response>;
 
 
 /**
  * Submits an immediately invoked DELETE request if the provided URL has not changed.
  */
-export function useFetchDel<T = any>(url: URLish, options?: UseFetchOptions<T>, customAbortController?: AbortController): UseFetchState<T>;
+export function useFetchDel<T = any>(url: URLish, options?: FetchItOptions<T>, customAbortController?: AbortController): FetchItState<T>;
 
 /**
  * Submits an immediately invoked DELETE request if the provided URL has not changed.
  * The resulting value will be a `Response`.
  */
-export function useFetchDelResp(url: URLish, options?: Omit<UseFetchOptions, 'responseType'>, customAbortController?: AbortController): UseFetchState<Response>;
+export function useFetchDelResp(url: URLish, options?: Omit<FetchItOptions, 'responseType'>, customAbortController?: AbortController): FetchItState<Response>;
 
 /**
  * Creates a DELETE fetch invocation function and state of said invocation.
  */
-export function useFetchDelFn<T = any>(url: URLish, options?: UseFetchOptions<T>): UseFetchStateFn<T>;
+export function useFetchDelFn<T = any>(url: URLish, options?: FetchItOptions<T>): FetchItStateFn<T>;
 
 /**
  * Creates a DELETE fetch invocation function and state of said invocation.
  * The resulting value will be a `Response`.
  */
-export function useFetchDelRespFn(url: URLish, options?: Omit<UseFetchOptions, 'responseType'>): UseFetchStateFn<Response>;
+export function useFetchDelRespFn(url: URLish, options?: Omit<FetchItOptions, 'responseType'>): FetchItStateFn<Response>;
 
 
 /**
  * Submits an immediately invoked HEAD request if the provided URL has not changed.
  * The resulting value will be a `Response`.
  */
-export function useFetchHead(url: URLish, options?: Omit<UseFetchOptions, 'responseType'>, customAbortController?: AbortController): UseFetchState<Response>;
+export function useFetchHead(url: URLish, options?: Omit<FetchItOptions, 'responseType'>, customAbortController?: AbortController): FetchItState<Response>;
 
 /**
  * Creates a HEAD fetch invocation function and state of said invocation.
  * The resulting value will be a `Response`.
  */
-export function useFetchHeadFn(url: URLish, options?: Omit<UseFetchOptions, 'responseType'>): UseFetchStateFn<Response>;
+export function useFetchHeadFn(url: URLish, options?: Omit<FetchItOptions, 'responseType'>): FetchItStateFn<Response>;
 
 
 /**
  * Submits a GET request that will utilize the middleware and other options provided by
- * `@bsara/react-use-fetch`.
+ * `react-fetch-it`.
  */
-export function fetchGet<T>(url: URLish, options?: UseFetchOptions<T>): Promise<T>;
+export function fetchGet<T>(url: URLish, options?: FetchItOptions<T>): Promise<T>;
 
 /**
  * Submits a POST request that will utilize the middleware and other options provided by
- * `@bsara/react-use-fetch`.
+ * `react-fetch-it`.
  */
-export function fetchPost<T>(url: URLish, options?: UseFetchOptions<T>): Promise<T>;
+export function fetchPost<T>(url: URLish, options?: FetchItOptions<T>): Promise<T>;
 
 /**
  * Submits a PUT request that will utilize the middleware and other options provided by
- * `@bsara/react-use-fetch`.
+ * `react-fetch-it`.
  */
-export function fetchPut<T>(url: URLish, options?: UseFetchOptions<T>): Promise<T>;
+export function fetchPut<T>(url: URLish, options?: FetchItOptions<T>): Promise<T>;
 
 /**
  * Submits a DELETE request that will utilize the middleware and other options provided by
- * `@bsara/react-use-fetch`.
+ * `react-fetch-it`.
  */
-export function fetchDel<T>(url: URLish, options?: UseFetchOptions<T>): Promise<T>;
+export function fetchDel<T>(url: URLish, options?: FetchItOptions<T>): Promise<T>;
 
 /**
  * Submits a HEAD request that will utilize the middleware and other options provided by
- * `@bsara/react-use-fetch`.
+ * `react-fetch-it`.
  */
-export function fetchHead<T>(url: URLish, options?: Omit<UseFetchOptions<T>, 'responseType'>): Promise<T>;
+export function fetchHead(url: URLish, options?: Omit<FetchItOptions<Response>, 'responseType'>): Promise<Response>;
 
 /**
  * Submits an HTTP request that will utilize the middleware and other options provided by
- * `@bsara/react-use-fetch`.
+ * `react-fetch-it`.
  */
-export function doFetch<T extends UseFetchMiddlewareCustomOptions = UseFetchMiddlewareCustomOptions, TResp = object>(url: URLish, options?: UseFetchFullOptions<T, TResp>): Promise<TResp>;
+export function doFetch<T extends FetchItMiddlewareCustomOptions = FetchItMiddlewareCustomOptions, TResp = object>(url: URLish, options?: FetchItFullOptions<T, TResp>): Promise<TResp>;
 
 // endregion
 
@@ -119,7 +119,7 @@ export function doFetch<T extends UseFetchMiddlewareCustomOptions = UseFetchMidd
 
 // region Options
 
-export type UseFetchFullOptions<T extends UseFetchMiddlewareCustomOptions = UseFetchMiddlewareCustomOptions, TResp = object> = RequestInit
+export type FetchItFullOptions<T extends FetchItMiddlewareCustomOptions = FetchItMiddlewareCustomOptions, TResp = object> = RequestInit
   & { middlewareOptions: T }
   & (
     { responseType: 'arrayBuffer'; onResponse?: (response: ArrayBuffer) => void; }
@@ -130,28 +130,28 @@ export type UseFetchFullOptions<T extends UseFetchMiddlewareCustomOptions = UseF
     | { responseType: 'text'; onResponse?: (response: string) => void; }
   );
 
-export type UseFetchOptions<TResp = any> = Omit<UseFetchFullOptions<UseFetchMiddlewareCustomOptions, TResp>, 'method'>;
+export type FetchItOptions<TResp = any> = Omit<FetchItFullOptions<FetchItMiddlewareCustomOptions, TResp>, 'method'>;
 
 
-interface UseFetchMiddlewareCustomOptions {}
+interface FetchItMiddlewareCustomOptions {}
 
 // endregion
 
 
 // region Hook State
 
-export type UseFetchState<T> = {
+export type FetchItState<T> = {
   loading: boolean;
   error?: Error | undefined;
   value?: T | undefined
 };
 
-export type UseFetchStateFn<T> = [
-  UseFetchState<T>,
+export type FetchItStateFn<T> = [
+  FetchItState<T>,
   (customAbortController?: AbortController) => PromiseLike<T>
 ];
 
-export type UseFetchStateWithBodyFn<TBody, T> = {
+export type FetchItStateWithBodyFn<TBody, T> = {
   loading: boolean;
   error?: Error | undefined;
   value?: ((body?: TBody, customAbortController?: AbortController) => PromiseLike<T>) | undefined;
@@ -160,9 +160,9 @@ export type UseFetchStateWithBodyFn<TBody, T> = {
 // endregion
 
 
-export type UseFetchMiddleware<T extends UseFetchMiddlewareOptions = UseFetchMiddlewareOptions> = (options: T) => T | Response | false;
+export type FetchItMiddleware<T extends FetchItMiddlewareOptions = FetchItMiddlewareOptions> = (options: T) => T | Response | false;
 
-export type UseFetchMiddlewareOptions<T extends UseFetchMiddlewareCustomOptions = UseFetchMiddlewareCustomOptions, TResp = object> = UseFetchFullOptions<T, TResp> & { url: string };
+export type FetchItMiddlewareOptions<T extends FetchItMiddlewareCustomOptions = FetchItMiddlewareCustomOptions, TResp = object> = FetchItFullOptions<T, TResp> & { url: string };
 
 
 

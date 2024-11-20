@@ -16,15 +16,15 @@ Examples
 // You can set globally if you DO NOT expect changes in options at runtime.
 // You would typically have this code execute via or in your main entry file.
 
-import { addUseFetchMiddleware } from "react-use-fetch";
-import simpleCacheMiddleware, { UseFetchSimpleCacheMiddlewareOptions } from "react-use-fetch/middleware/simple-cache";
+import { addFetchItMiddleware } from "react-fetch-it";
+import simpleCacheMiddleware, { FetchItSimpleCacheMiddlewareOptions } from "react-fetch-it/middleware/simple-cache";
 
-addUseFetchMiddleware(
-simpleCacheMiddleware({
-// ...
-} as UseFetchSimpleCacheMiddlewareOptions),
+addFetchItMiddleware(
+  simpleCacheMiddleware({
+    // ...
+  } as FetchItSimpleCacheMiddlewareOptions),
 
-// other middlewares...
+  // other middlewares...
 );
 
 // ...
@@ -33,20 +33,20 @@ simpleCacheMiddleware({
 ```tsx
 // You can use a provider if you expect changes in options at runtime.
 
-import UseFetchMiddlewareProvider from 'react-use-fetch/UseFetchMiddlewareProvider';
-import simpleCacheMiddleware, { UseFetchSimpleCacheMiddlewareOptions } from "react-use-fetch/middleware/simple-cache";
+import FetchItMiddlewareProvider from 'react-fetch-it/FetchItMiddlewareProvider';
+import simpleCacheMiddleware, { FetchItSimpleCacheMiddlewareOptions } from "react-fetch-it/middleware/simple-cache";
 
 export function MyComponent({ children, ...props }) {
   // ...
 
-  const defaultCacheOptions: UseFetchSimpleCacheMiddlewareOptions = {
+  const defaultCacheOptions: FetchItSimpleCacheMiddlewareOptions = {
     // ...
   };
 
   return (
-    <UseFetchMiddlewareProvider middleware={simpleCacheMiddleware(defaultCacheOptions)}>
+    <FetchItMiddlewareProvider middleware={simpleCacheMiddleware(defaultCacheOptions)}>
       {children}
-    </UseFetchMiddlewareProvider>
+    </FetchItMiddlewareProvider>
   );
 }
 ```

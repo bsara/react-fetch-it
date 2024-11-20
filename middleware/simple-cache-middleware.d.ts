@@ -1,4 +1,4 @@
-import { UseFetchMiddleware } from '../index';
+import { FetchItMiddleware } from '../index';
 
 
 
@@ -12,13 +12,13 @@ import { UseFetchMiddleware } from '../index';
  * // You can set globally if you DO NOT expect changes in options at runtime.
  * // You would typically have this code execute via or in your main entry file.
  *
- * import { addUseFetchMiddleware } from "react-use-fetch";
- * import simpleCacheMiddleware, { UseFetchSimpleCacheMiddlewareOptions } from "react-use-fetch/middleware/simple-cache";
+ * import { addFetchItMiddleware } from "react-fetch-it";
+ * import simpleCacheMiddleware, { FetchItSimpleCacheMiddlewareOptions } from "react-fetch-it/middleware/simple-cache";
  *
- * addUseFetchMiddleware(
+ * addFetchItMiddleware(
  *   simpleCacheMiddleware({
  *     // ...
- *   } as UseFetchSimpleCacheMiddlewareOptions),
+ *   } as FetchItSimpleCacheMiddlewareOptions),
  *
  *   // other middlewares...
  * );
@@ -30,34 +30,34 @@ import { UseFetchMiddleware } from '../index';
  * @example ```tsx
  * // You can use a provider if you expect changes in options at runtime.
  *
- * import UseFetchMiddlewareProvider from 'react-use-fetch/UseFetchMiddlewareProvider';
- * import simpleCacheMiddleware, { UseFetchSimpleCacheMiddlewareOptions } from "react-use-fetch/middleware/simple-cache";
+ * import FetchItMiddlewareProvider from 'react-fetch-it/FetchItMiddlewareProvider';
+ * import simpleCacheMiddleware, { FetchItSimpleCacheMiddlewareOptions } from "react-fetch-it/middleware/simple-cache";
  *
  * export function MyComponent({ children, ...props }) {
  *   // ...
  *
- *   const defaultCacheOptions: UseFetchSimpleCacheMiddlewareOptions = {
+ *   const defaultCacheOptions: FetchItSimpleCacheMiddlewareOptions = {
  *     // ...
  *   };
  *
  *   return (
- *     <UseFetchMiddlewareProvider middleware={simpleCacheMiddleware(defaultCacheOptions)}>
+ *     <FetchItMiddlewareProvider middleware={simpleCacheMiddleware(defaultCacheOptions)}>
  *       {children}
- *     </UseFetchMiddlewareProvider>
+ *     </FetchItMiddlewareProvider>
  *   );
  * }
  * ```
  */
-export default function simpleCacheMiddleware(defaultOptions?: UseFetchSimpleCacheMiddlewareOptions): UseFetchMiddleware;
+export default function simpleCacheMiddleware(defaultOptions?: FetchItSimpleCacheMiddlewareOptions): FetchItMiddleware;
 
 
 declare global {
-  interface UseFetchMiddlewareCustomOptions {
-    simpleCache?: UseFetchSimpleCacheMiddlewareOptions
+  interface FetchItMiddlewareCustomOptions {
+    simpleCache?: FetchItSimpleCacheMiddlewareOptions
   }
 }
 
-export type UseFetchSimpleCacheMiddlewareOptions = {
+export type FetchItSimpleCacheMiddlewareOptions = {
 
   /**
    * Endpoint identifiers and/or filters used to determine if a request should be
@@ -70,7 +70,7 @@ export type UseFetchSimpleCacheMiddlewareOptions = {
    * > **NOTE:** If `include` is not provided, all requests will be included unless
    * > `exclude` is provided.
    */
-  include?: (UseFetchSimpleCacheMiddlewareEndpointIdentifier | UseFetchSimpleCacheMiddlewareFilter)[] | boolean;
+  include?: (FetchItSimpleCacheMiddlewareEndpointIdentifier | FetchItSimpleCacheMiddlewareFilter)[] | boolean;
 
   /**
    * Endpoint identifiers and/or filters used to determine if a request should be
@@ -80,7 +80,7 @@ export type UseFetchSimpleCacheMiddlewareOptions = {
    *
    * A `boolean` can be provided for non-global inclusion.
    */
-  exclude?: (UseFetchSimpleCacheMiddlewareEndpointIdentifier | UseFetchSimpleCacheMiddlewareFilter)[] | boolean;
+  exclude?: (FetchItSimpleCacheMiddlewareEndpointIdentifier | FetchItSimpleCacheMiddlewareFilter)[] | boolean;
 
   /**
    * Amount of time, in milliseconds, to cache a response.
@@ -88,9 +88,9 @@ export type UseFetchSimpleCacheMiddlewareOptions = {
   timeout?: number;
 }
 
-export type UseFetchSimpleCacheMiddlewareEndpointIdentifier = [
+export type FetchItSimpleCacheMiddlewareEndpointIdentifier = [
   'DELETE' | 'GET' | 'HEAD' | 'PATCH' | 'POST' | 'PUT' | '*' | (string & {}),
   string | RegExp | URL
 ]
 
-export type UseFetchSimpleCacheMiddlewareFilter = (request: Request) => any;
+export type FetchItSimpleCacheMiddlewareFilter = (req: Request) => any;

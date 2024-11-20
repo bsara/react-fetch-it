@@ -1,15 +1,15 @@
 {
-  "name": "@bsara/react-use-fetch",
-  "version": "1.0.0-beta.11",
+  "name": "react-fetch-it",
+  "version": "1.0.0-beta.0",
   "description": "React hooks for interacting with the fetch API which includes the ability to add middleware to intercept, modify, cancel, cache, or analyze fetch calls.",
   "authors": [
     "Brandon Sara (https://bsara.dev)"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/bsara/react-use-fetch#readme",
-  "repository": "bsara/react-use-fetch",
+  "homepage": "https://github.com/bsara/react-fetch-it#readme",
+  "repository": "bsara/react-fetch-it",
   "bugs": {
-    "url": "https://github.com/bsara/react-use-fetch/issues"
+    "url": "https://github.com/bsara/react-fetch-it/issues"
   },
   "keywords": [
     "use-fetch",
@@ -17,6 +17,7 @@
     "react",
     "hook",
     "react-hook",
+    "react-use-fetch",
     "http",
     "request"
   ],
@@ -34,9 +35,9 @@
       "types": "./index.d.ts",
       "default": "./index.js"
     },
-    "./UseFetchMiddlewareProvider": {
-      "types": "./middleware/UseFetchMiddlewareProvider.d.ts",
-      "default": "./middleware/UseFetchMiddlewareProvider.js"
+    "./MiddlewareProvider": {
+      "types": "./middleware/FetchItMiddlewareProvider.d.ts",
+      "default": "./middleware/FetchItMiddlewareProvider.js"
     },
     "./middleware/default-options": {
       "types": "./middleware/default-options-middleware.d.ts",

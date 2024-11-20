@@ -30,28 +30,28 @@ Examples
 // You can set globally if you DO NOT expect the need for this middleware to change at runtime.
 // You would typically have this code execute via (or in) your main entry file.
 
-import { addUseFetchMiddleware } from "react-use-fetch";
-import standardOptionsMiddleware from "react-use-fetch/middleware/standard-options";
+import { addFetchItMiddleware } from "react-fetch-it";
+import standardOptionsMiddleware from "react-fetch-it/middleware/standard-options";
 
 addUseFetchMiddleware(
-standardOptionsMiddleware,
-// other middlewares...
+  standardOptionsMiddleware,
+  // other middlewares...
 );
 ```
 
 ```tsx
 // You can use a provider if you expect the need for this middleware to change at runtime.
 
-import UseFetchMiddlewareProvider from 'react-use-fetch/UseFetchMiddlewareProvider';
-import standardOptionsMiddleware from "react-use-fetch/middleware/standard-options";
+import FetchItMiddlewareProvider from 'react-fetch-it/FetchItMiddlewareProvider';
+import standardOptionsMiddleware from "react-fetch-it/middleware/standard-options";
 
 export function MyComponent({ children, ...props }) {
   // ...
 
   return (
-    <UseFetchMiddlewareProvider middleware={standardOptionsMiddleware}>
+    <FetchItMiddlewareProvider middleware={standardOptionsMiddleware}>
       {children}
-    </UseFetchMiddlewareProvider>
+    </FetchItMiddlewareProvider>
   );
 }
 ```

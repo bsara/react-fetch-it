@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useAsyncFn } from 'react-use';
 
-import UseFetchMiddlewareContext from "./UseFetchMiddlewareContext.js";
+import FetchItMiddlewareContext from "./FetchItMiddlewareContext.js";
 
 
 
@@ -10,9 +10,9 @@ import UseFetchMiddlewareContext from "./UseFetchMiddlewareContext.js";
 let _middlewares = [];
 
 
-export function addUseFetchMiddleware(...newMiddlewares) {
+export function addFetchItMiddleware(...newMiddlewares) {
   if (!newMiddlewares?.length) {
-    console.warn('No middleware provided to addUseFetchMiddleware...ignoring.');
+    console.warn('No middleware provided to addFetchItMiddleware...ignoring.');
     return;
   }
 
@@ -24,7 +24,7 @@ export function addUseFetchMiddleware(...newMiddlewares) {
 }
 
 
-export function removeUseFetchMiddleware(middleware) {
+export function removeFetchItMiddleware(middleware) {
   _middlewares = _middlewares.filter((m) => (m !== middleware));
 }
 
