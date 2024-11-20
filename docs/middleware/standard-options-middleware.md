@@ -33,7 +33,7 @@ Examples
 import { addFetchItMiddleware } from "react-fetch-it";
 import standardOptionsMiddleware from "react-fetch-it/middleware/standard-options";
 
-addUseFetchMiddleware(
+addFetchItMiddleware(
   standardOptionsMiddleware,
   // other middlewares...
 );

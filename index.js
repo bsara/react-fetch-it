@@ -374,7 +374,7 @@ function _useFetch({
   options,
   url
 }) {
-  const contextMiddlewares = useContext(UseFetchMiddlewareContext);
+  const contextMiddlewares = useContext(FetchItMiddlewareContext);
 
   return useAsyncFn(
     function(bodyOrAbortController, abortController) {
