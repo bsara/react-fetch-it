@@ -80,15 +80,77 @@ addFetchItMiddleware(
 Advanced Usage
 ----------------------------
 
-TODO
+### Adding Static Middleware
 
-### Adding Middleware
+```ts
+// main.ts
 
-TODO
+import { addFetchItMiddleware } from 'react-fetch-it';
+
+addFetchItMiddleware(
+  // Add middleware here...
+);
+
+// ...
+```
+
+### Adding Dynamic Middleware
+
+```tsx
+import FetchItMiddlewareProvider from 'react-fetch-it/MiddlewareProvider';
+
+export function App() {
+  // ...
+  
+  return (
+    <FetchItMiddlewareProvider middleware={[
+      // Add middleware here...
+    ]}>
+      {/* ... */}
+    </FetchItMiddlewareProvider>
+  );
+}
+```
 
 ### Aborting a Request
 
-TODO
+```ts
+// main.ts
+
+import { addFetchItMiddleware, FetchItMiddlewareOptions } from 'react-fetch-it';
+
+addFetchItMiddleware(
+  // ...
+
+  (options: FetchItMiddlewareOptions) => {
+    // do some logic...
+    return false; // returning `false` from a middleware will abort the request.
+  }
+)
+```
+
+...or...
+
+```tsx
+import FetchItMiddlewareProvider from 'react-fetch-it/MiddlewareProvider';
+import type { FetchItMiddleware } from 'react-fetch-it';
+
+export function App() {
+  const abortFetchItMiddleware: FetchItMiddleware = (options: FetchItMiddlewareOptions) => {
+    // do some logic...
+    return false; // returning `false` from a middleware will abort the request. 
+  };
+
+  return (
+    <FetchItMiddlewareProvider middleware={[
+      abortFetchItMiddleware
+      // ...
+    ]}>
+      {/* ... */}
+    </FetchItMiddlewareProvider>
+  );
+}
+```
 
 
 Hooks
@@ -126,13 +188,19 @@ Hooks
 Middleware
 ----------------------------
 
-TODO
+You are able to provide middleware to intercept, modify, cancel, or analyze fetch calls.
+A few middleware are provided by this package, but you can also create your own and doing
+so is quite simple.
 
 ### Provided Middleware
 
 - [defaultOptionsMiddleware](https://github.com/bsara/react-fetch-it/blob/master/docs/middleware/default-options-middleware.md)
 - [simpleCacheMiddleware](https://github.com/bsara/react-fetch-it/blob/master/docs/middleware/simple-cache-middleware.md)
 - [standardOptionsMiddleware](https://github.com/bsara/react-fetch-it/blob/master/docs/middleware/standard-options-middleware.md)
+
+### Creating Your Own Middleware
+
+TODO
 
 
 Fetch Wrappers
