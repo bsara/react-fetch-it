@@ -353,7 +353,7 @@ function _useImmediateFetch({
   });
 
   useEffect(() => {
-    const abortController = origAbortController;
+    let abortController = origAbortController;
 
     callback(abortController).finally(function() {
       abortController = undefined;
