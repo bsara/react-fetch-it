@@ -1,7 +1,7 @@
 {
   "name": "react-fetch-it",
   "version": "1.0.0",
-  "description": "React hooks for interacting with the fetch API which includes the ability to add middleware to intercept, modify, cancel, cache, or analyze fetch calls.",
+  "description": "React hooks for interacting with the fetch API which includes the ability to add middleware to intercept, modify, cancel, or analyze fetch calls.",
   "authors": [
     "Brandon Sara (https://bsara.dev)"
   ],
@@ -44,10 +44,6 @@
     "./middleware/default-options": {
       "types": "./middleware/default-options-middleware.d.ts",
       "default": "./middleware/default-options-middleware.js"
-    },
-    "./middleware/simple-cache": {
-      "types": "./middleware/simple-cache-middleware.d.ts",
-      "default": "./middleware/simple-cache-middleware.js"
     },
     "./middleware/standard-options": {
       "types": "./middleware/standard-options-middleware.d.ts",

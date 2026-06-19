@@ -5,7 +5,7 @@ react-fetch-it
 [![ISC License](https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square)][license]
 
 React hooks for interacting with [the fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
-Includes the ability to add middleware to intercept, modify, cancel, cache, or analyze
+Includes the ability to add middleware to intercept, modify, cancel, or analyze
 fetch calls.
 
 
@@ -200,7 +200,6 @@ so is quite simple.
 ### Provided Middleware
 
 - [defaultOptionsMiddleware](https://github.com/bsara/react-fetch-it/blob/master/docs/middleware/default-options-middleware.md)
-- [simpleCacheMiddleware](https://github.com/bsara/react-fetch-it/blob/master/docs/middleware/simple-cache-middleware.md)
 - [standardOptionsMiddleware](https://github.com/bsara/react-fetch-it/blob/master/docs/middleware/standard-options-middleware.md)
 
 ### Creating Your Own Middleware
