@@ -205,7 +205,34 @@ so is quite simple.
 
 ### Creating Your Own Middleware
 
-TODO
+Middleware is simply a function that receives the request `options` _(which include
+the `url`, `method`, `headers`, `body`, `responseType`, and any `middlewareOptions`)_
+and returns one of the following:
+
+- The `options` object _(modified or not)_ to pass along to the next middleware in the
+  chain.
+- A `Response` to short-circuit the chain and immediately resolve the request with that
+  response _(no network request is made)_.
+- `false` to abort the request.
+
+Middleware are executed in the order they are added, and each receives a copy of the
+current options, so modifying the options it is given will not affect other middleware
+unless those changes are returned.
+
+```ts
+import type { FetchItMiddleware, FetchItMiddlewareOptions } from 'react-fetch-it';
+
+// Adds an `Authorization` header to every request.
+const authMiddleware: FetchItMiddleware = (options: FetchItMiddlewareOptions) => {
+  return {
+    ...options,
+    headers: {
+      ...options.headers,
+      Authorization: `Bearer ${getToken()}`
+    }
+  };
+};
+```
 
 
 Fetch Wrappers

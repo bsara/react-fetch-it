@@ -42,7 +42,7 @@ addFetchItMiddleware(
 ```tsx
 // You can use a provider if you expect the need for this middleware to change at runtime.
 
-import FetchItMiddlewareProvider from 'react-fetch-it/FetchItMiddlewareProvider';
+import FetchItMiddlewareProvider from 'react-fetch-it/MiddlewareProvider';
 import standardOptionsMiddleware from "react-fetch-it/middleware/standard-options";
 
 export function MyComponent({ children, ...props }) {

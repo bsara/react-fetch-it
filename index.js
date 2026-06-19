@@ -250,7 +250,7 @@ export function useFetchPatchRespFn(url, options) {
 }
 
 
-export function useFetchDelete(url, optionsOrCustomAbortController, customAbortController) {
+export function useFetchDel(url, optionsOrCustomAbortController, customAbortController) {
   const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
 
   return _useImmediateFetch({
@@ -263,7 +263,7 @@ export function useFetchDelete(url, optionsOrCustomAbortController, customAbortC
   });
 }
 
-export function useFetchDeleteFn(url, options) {
+export function useFetchDelFn(url, options) {
   return _useFetch({
     options: {
       ...(options ?? {}),
@@ -273,7 +273,7 @@ export function useFetchDeleteFn(url, options) {
   });
 }
 
-export function useFetchDeleteResp(url, optionsOrCustomAbortController, customAbortController) {
+export function useFetchDelResp(url, optionsOrCustomAbortController, customAbortController) {
   const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
 
   return _useImmediateFetch({
@@ -287,7 +287,7 @@ export function useFetchDeleteResp(url, optionsOrCustomAbortController, customAb
   });
 }
 
-export function useFetchDeleteRespFn(url, options) {
+export function useFetchDelRespFn(url, options) {
   return _useFetch({
     options: {
       ...(options ?? {}),
