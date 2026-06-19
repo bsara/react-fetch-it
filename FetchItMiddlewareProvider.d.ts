@@ -2,7 +2,7 @@
  * @license
  * react-fetch-it
  *
- * Copyright (c) 2024, Brandon D. Sara (https://bsara.dev/)
+ * Copyright (c) 2026, Brandon D. Sara (https://bsara.dev/)
  * Licensed under the ISC license (https://github.com/bsara/react-fetch-it/blob/master/LICENSE)
  */
 
