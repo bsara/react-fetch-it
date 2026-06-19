@@ -18,10 +18,13 @@ export default function simpleCacheMiddleware({
   generateKey
 } = {}) {
   return (reqOptions) => {
-    if (_filter(reqOptions, (reqOptions.middlewareOptions?.simpleCache?.include ?? defaultInclude))) {
+    const include = (reqOptions.middlewareOptions?.simpleCache?.include ?? defaultInclude);
+    if (include != null && !_filter(reqOptions, include)) {
       return reqOptions;
     }
-    if (_filter(reqOptions, (reqOptions.middlewareOptions?.simpleCache?.exclude ?? defaultExclude))) {
+
+    const exclude = (reqOptions.middlewareOptions?.simpleCache?.exclude ?? defaultExclude);
+    if (exclude != null && _filter(reqOptions, exclude)) {
       return reqOptions;
     }
 
@@ -53,6 +56,10 @@ export default function simpleCacheMiddleware({
 
 
 function _filter(reqOptions, filters) {
+  if (filters == null) {
+    return false;
+  }
+
   if (typeof filters === 'boolean') {
     return filters;
   }
