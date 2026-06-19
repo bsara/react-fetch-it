@@ -385,7 +385,7 @@ export function fetchPost(url, options) {
 }
 
 export function fetchPostResp(url, options) {
-  return _execFetch({ method: 'POST', url, options: (options ?? {}), responseType: 'none' });
+  return _execFetch({ method: 'POST', url, options: { ...(options ?? {}), responseType: 'none' } });
 }
 
 
@@ -394,7 +394,7 @@ export function fetchPut(url, options) {
 }
 
 export function fetchPutResp(url, options) {
-  return _execFetch({ method: 'PUT', url, options: (options ?? {}), responseType: 'none' });
+  return _execFetch({ method: 'PUT', url, options: { ...(options ?? {}), responseType: 'none' } });
 }
 
 
@@ -403,7 +403,7 @@ export function fetchPatch(url, options) {
 }
 
 export function fetchPatchResp(url, options) {
-  return _execFetch({ method: 'PATCH', url, options: (options ?? {}), responseType: 'none' });
+  return _execFetch({ method: 'PATCH', url, options: { ...(options ?? {}), responseType: 'none' } });
 }
 
 
@@ -412,7 +412,7 @@ export function fetchDel(url, options) {
 }
 
 export function fetchDelResp(url, options) {
-  return _execFetch({ method: 'DELETE', url, options: (options ?? {}), responseType: 'none' });
+  return _execFetch({ method: 'DELETE', url, options: { ...(options ?? {}), responseType: 'none' } });
 }
 
 
@@ -500,7 +500,7 @@ function _execFetch({ method, url: origUrl, options: origReqOptions, extraMiddle
   let reqOptions = { ...origReqOptions, url: origUrl.toString() };
 
   for (const middleware of [ ..._middlewares, ...(typeof extraMiddlewares === 'function' ? [ extraMiddlewares ] : (extraMiddlewares ?? [])) ]) {
-    reqOptions = middleware({ ...structuredClone(reqOptions) });
+    reqOptions = middleware({ ...reqOptions });
 
     if (reqOptions === false) {
       return Promise.resolve(undefined);
