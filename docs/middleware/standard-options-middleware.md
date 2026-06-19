@@ -1,7 +1,7 @@
 standardOptionsMiddleware()
 =========================================================================================
 
-> Refer to the [typescript docs](../../middleware/standard-options-middleware.d.ts)
+> Refer to the [TypeScript docs](../../middleware/standard-options-middleware.d.ts)
 for full API details.
 
 Sets some reasonably default standard options on all requests (all of which are

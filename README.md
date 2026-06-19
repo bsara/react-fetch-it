@@ -173,6 +173,11 @@ Hooks
 - HEAD 
   - [useFetchHead](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-head.md)
   - [useFetchHeadFn](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-head-fn.md)
+- PATCH
+  - [useFetchPatch](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-patch.md)
+  - [useFetchPatchFn](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-patch-fn.md)
+  - [useFetchPatchResp](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-patch-resp.md)
+  - [useFetchPatchRespFn](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-patch-resp-fn.md)
 - POST
   - [useFetchPost](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-post.md)
   - [useFetchPostFn](https://github.com/bsara/react-fetch-it/blob/master/docs/hooks/use-fetch-post-fn.md)
@@ -212,10 +217,16 @@ Fetch Wrappers
 
 - [doFetch](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/do-fetch.md)
 - [fetchDel](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-del.md)
+- [fetchDelResp](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-del-resp.md)
 - [fetchGet](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-get.md)
+- [fetchGetResp](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-get-resp.md)
 - [fetchHead](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-head.md)
+- [fetchPatch](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-patch.md)
+- [fetchPatchResp](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-patch-resp.md)
 - [fetchPost](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-post.md)
+- [fetchPostResp](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-post-resp.md)
 - [fetchPut](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-put.md)
+- [fetchPutResp](https://github.com/bsara/react-fetch-it/blob/master/docs/fetch-wrappers/fetch-put-resp.md)
 
 
 License

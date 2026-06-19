@@ -197,6 +197,59 @@ export function useFetchPutRespFn(url, options) {
 }
 
 
+export function useFetchPatch(url, body, optionsOrCustomAbortController, customAbortController) {
+  const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
+
+  return _useImmediateFetch({
+    abortController: finalCustomAbortController,
+    options: {
+      ...options,
+      body,
+      method: 'PATCH'
+    },
+    url
+  });
+}
+
+export function useFetchPatchFn(url, options) {
+  return _useFetch({
+    callbackProvidesBody: true,
+    options: {
+      ...(options ?? {}),
+      method: 'PATCH'
+    },
+    url
+  });
+}
+
+export function useFetchPatchResp(url, body, optionsOrCustomAbortController, customAbortController) {
+  const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
+
+  return _useImmediateFetch({
+    abortController: finalCustomAbortController,
+    options: {
+      ...options,
+      body,
+      method: 'PATCH',
+      responseType: 'none'
+    },
+    url
+  });
+}
+
+export function useFetchPatchRespFn(url, options) {
+  return _useFetch({
+    callbackProvidesBody: true,
+    options: {
+      ...(options ?? {}),
+      method: 'PATCH',
+      responseType: 'none'
+    },
+    url
+  });
+}
+
+
 export function useFetchDelete(url, optionsOrCustomAbortController, customAbortController) {
   const [ options, finalCustomAbortController ] = _getOptionsAndCustomAbortController(optionsOrCustomAbortController, customAbortController);
 
@@ -322,21 +375,51 @@ export function fetchGet(url, options) {
   return _execFetch({ method: 'GET', url, options: (options ?? {}) });
 }
 
+export function fetchGetResp(url, options) {
+  return _execFetch({ method: 'GET', url, options: { ...(options ?? {}), responseType: 'none' } });
+}
+
+
 export function fetchPost(url, options) {
   return _execFetch({ method: 'POST', url, options: (options ?? {}) });
 }
+
+export function fetchPostResp(url, options) {
+  return _execFetch({ method: 'POST', url, options: (options ?? {}), responseType: 'none' });
+}
+
 
 export function fetchPut(url, options) {
   return _execFetch({ method: 'PUT', url, options: (options ?? {}) });
 }
 
+export function fetchPutResp(url, options) {
+  return _execFetch({ method: 'PUT', url, options: (options ?? {}), responseType: 'none' });
+}
+
+
+export function fetchPatch(url, options) {
+  return _execFetch({ method: 'PATCH', url, options: (options ?? {}) });
+}
+
+export function fetchPatchResp(url, options) {
+  return _execFetch({ method: 'PATCH', url, options: (options ?? {}), responseType: 'none' });
+}
+
+
 export function fetchDel(url, options) {
   return _execFetch({ method: 'DELETE', url, options: (options ?? {}) });
 }
 
+export function fetchDelResp(url, options) {
+  return _execFetch({ method: 'DELETE', url, options: (options ?? {}), responseType: 'none' });
+}
+
+
 export function fetchHead(url, options) {
   return _execFetch({method: 'HEAD', url, options: { ...(options ?? {}), responseType: 'none' } });
 }
+
 
 export function doFetch(url, options) {
   return _execFetch({ method: (options?.method ?? 'GET'), url, options: (options ?? {}) });

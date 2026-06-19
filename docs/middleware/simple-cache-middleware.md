@@ -1,7 +1,7 @@
 simpleCacheMiddleware(...)
 =========================================================================================
 
-> Refer to the [typescript docs](../../middleware/simple-cache-middleware.d.ts) for full
+> Refer to the [TypeScript docs](../../middleware/simple-cache-middleware.d.ts) for full
 API details.
 
 Creates a new middleware which handles caching of request responses.

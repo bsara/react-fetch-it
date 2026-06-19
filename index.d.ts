@@ -359,6 +359,97 @@ export function useFetchPutRespFn<TBody = any>(
 
 
 /**
+ * Submits an immediately invoked PATCH request.
+ *
+ * @param url - URL to pass to fetch API.
+ * @param [body] - Request body.
+ * @param [options] - Request and middleware options.
+ * @param [customAbortController] - Request abort controller.
+ *
+ * @template T - Type of the response body.
+ */
+export function useFetchPatch<T = any>(
+  url: URLish,
+  body?: any,
+  options?: FetchItOptions<T>,
+  customAbortController?: AbortController
+): FetchItState<T>;
+
+/**
+ * Submits an immediately invoked PATCH request.
+ *
+ * @param url - URL to pass to fetch API.
+ * @param body - Request body.
+ * @param customAbortController - Request abort controller.
+ *
+ * @template T - Type of the response body.
+ */
+export function useFetchPatch<T = any>(
+  url: URLish,
+  body: any,
+  customAbortController: AbortController
+): FetchItState<T>;
+
+/**
+ * Submits an immediately invoked PATCH request.
+ * The resulting value will be a `Response`.
+ *
+ * @param url - URL to pass to fetch API.
+ * @param [body] - Request body.
+ * @param [options] - Request and middleware options.
+ * @param [customAbortController] - Request abort controller.
+ */
+export function useFetchPatchResp(
+  url: URLish,
+  body?: any,
+  options?: Omit<FetchItOptions, 'responseType'>,
+  customAbortController?: AbortController
+): FetchItState<Response>;
+
+/**
+ * Submits an immediately invoked PATCH request.
+ * The resulting value will be a `Response`.
+ *
+ * @param url - URL to pass to fetch API.
+ * @param body - Request body.
+ * @param customAbortController - Request abort controller.
+ */
+export function useFetchPatchResp(
+  url: URLish,
+  body: any,
+  customAbortController: AbortController
+): FetchItState<Response>;
+
+/**
+ * Creates a PATCH fetch invocation function and state of said invocation.
+ *
+ * @param url - URL to pass to fetch API.
+ * @param [options] - Request and middleware options.
+ *
+ * @template TBody - Type of the request body.
+ * @template T - Type of the response body.
+ */
+export function useFetchPatchFn<TBody = any, T = any>(
+  url: URLish,
+  options?: FetchItOptions<T>
+): FetchItStateWithBodyFn<TBody, T>;
+
+/**
+ * Creates a PATCH fetch invocation function and state of said invocation.
+ * The resulting value will be a `Response`.
+ *
+ * @param url - URL to pass to fetch API.
+ * @param [options] - Request and middleware options.
+ *
+ * @template TBody - Type of the request body.
+ */
+export function useFetchPatchRespFn<TBody = any>(
+  url: URLish,
+  options?: Omit<FetchItOptions, 'responseType'>
+): FetchItStateWithBodyFn<TBody, Response>;
+
+
+/**
  * Submits an immediately invoked DELETE request.
  *
  * @param url - URL to pass to fetch API.
@@ -485,6 +576,9 @@ export function useFetchHeadFn(url: URLish, options?: Omit<FetchItOptions, 'resp
  */
 export function fetchGet<T>(url: URLish, options?: FetchItOptions<T>): Promise<T>;
 
+export function fetchGetResp<Response>(url: URLish, options?: Omit<FetchItOptions<Response>, 'responseType'>): Promise<Response>;
+
+
 /**
  * Submits a POST request that will utilize the middleware and other options provided by
  * `react-fetch-it`.
@@ -495,6 +589,9 @@ export function fetchGet<T>(url: URLish, options?: FetchItOptions<T>): Promise<T
  * @template T - Type of the response body.
  */
 export function fetchPost<T>(url: URLish, options?: FetchItOptions<T>): Promise<T>;
+
+export function fetchPost(url: URLish, options?: Omit<FetchItOptions<Response>, 'responseType'>): Promise<Response>;
+
 
 /**
  * Submits a PUT request that will utilize the middleware and other options provided by
@@ -507,6 +604,23 @@ export function fetchPost<T>(url: URLish, options?: FetchItOptions<T>): Promise<
  */
 export function fetchPut<T>(url: URLish, options?: FetchItOptions<T>): Promise<T>;
 
+export function fetchPutResp(url: URLish, options?: Omit<FetchItOptions<Response>, 'responseType'>): Promise<Response>;
+
+
+/**
+ * Submits a PATCH request that will utilize the middleware and other options provided by
+ * `react-fetch-it`.
+ *
+ * @param url - URL to pass to fetch API.
+ * @param [options] - Request and middleware options.
+ *
+ * @template T - Type of the response body.
+ */
+export function fetchPatch<T>(url: URLish, options?: FetchItOptions<T>): Promise<T>;
+
+export function fetchPatchResp(url: URLish, options?: Omit<FetchItOptions<Response>, 'responseType'>): Promise<Response>;
+
+
 /**
  * Submits a DELETE request that will utilize the middleware and other options provided by
  * `react-fetch-it`.
@@ -517,6 +631,9 @@ export function fetchPut<T>(url: URLish, options?: FetchItOptions<T>): Promise<T
  * @template T - Type of the response body.
  */
 export function fetchDel<T>(url: URLish, options?: FetchItOptions<T>): Promise<T>;
+
+export function fetchDelResp(url: URLish, options?: Omit<FetchItOptions<Response>, 'responseType'>): Promise<Response>;
+
 
 /**
  * Submits a HEAD request that will utilize the middleware and other options provided by

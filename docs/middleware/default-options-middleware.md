@@ -1,7 +1,7 @@
 defaultOptionsMiddleware(...)
 =========================================================================================
 
-> Refer to the [typescript docs](../../middleware/default-options-middleware.d.ts) for
+> Refer to the [TypeScript docs](../../middleware/default-options-middleware.d.ts) for
 > full API details.
 
 Creates a new middleware which sets default options for all requests.
