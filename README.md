@@ -8,6 +8,8 @@ React hooks for interacting with [the fetch API](https://developer.mozilla.org/e
 Includes the ability to add middleware to intercept, modify, cancel, or analyze
 fetch calls.
 
+[Changelog](https://github.com/bsara/react-fetch-it/blob/master/CHANGELOG.md)
+
 
 Installation
 ----------------------------
