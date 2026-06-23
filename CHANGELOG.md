@@ -10,6 +10,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 
+## [1.0.2] - 2026-06-22
+
+### Fixed
+
+- Server-side rendering crash from importing the hooks (`useEffect`/`useContext`) into the
+  React Server Component graph. The hooks now live in their own `"use client"` module
+  (`hooks.js`), while the framework-agnostic fetch wrappers and middleware registry remain
+  usable server-side.
+
+
 ## [1.0.1] - 2026-06-22
 
 ### Added
@@ -28,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Initial release.
 
 
-[Unreleased]: https://github.com/bsara/react-fetch-it/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/bsara/react-fetch-it/compare/v1.0.2...HEAD
+[1.0.2]:      https://github.com/bsara/react-fetch-it/releases/tag/v1.0.2
 [1.0.1]:      https://github.com/bsara/react-fetch-it/releases/tag/v1.0.1
 [1.0.0]:      https://github.com/bsara/react-fetch-it/releases/tag/v1.0.0

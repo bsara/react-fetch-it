@@ -7,7 +7,7 @@
  */
 
 import { JSX } from 'react'
-import { FetchItMiddleware } from "./index"
+import { FetchItMiddleware } from "./index.js"
 
 
 

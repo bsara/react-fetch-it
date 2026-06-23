@@ -6,7 +6,7 @@
  * Licensed under the ISC license (https://github.com/bsara/react-fetch-it/blob/master/LICENSE)
  */
 
-import { FetchItMiddleware, FetchItOptions } from "../index";
+import { FetchItMiddleware, FetchItOptions } from "../index.js";
 
 
 
